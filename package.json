@@ -1,0 +1,55 @@
+{
+  "name": "grid-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "format": "prettier --write 'src/**/*.{ts,js,tsx,jsx}'",
+    "build": "tsc",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 120
+  },
+  "devDependencies": {
+    "@homebound/tsconfig": "^1.0.2",
+    "@types/jest": "^26.0.23",
+    "conventional-changelog-conventionalcommits": "^4.5.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "semantic-release": "^17.4.2",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.2.4"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  }
+}
