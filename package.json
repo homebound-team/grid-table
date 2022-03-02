@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@homebound/tsconfig": "^1.0.2",
+    "@semantic-release/exec": "^5.0.0",
     "@types/jest": "^26.0.23",
     "conventional-changelog-conventionalcommits": "^4.5.0",
     "jest": "^26.6.3",
@@ -46,6 +47,12 @@
         "@semantic-release/release-notes-generator",
         {
           "preset": "conventionalcommits"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "npm run build"
         }
       ],
       "@semantic-release/npm",
