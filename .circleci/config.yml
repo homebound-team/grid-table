@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.0.0
+  node: circleci/node@5.1.0
 
 workflows:
   version: 2
@@ -30,7 +30,7 @@ jobs:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
       - node/install-packages
-      - run: npm run build
+      - run: yarn build
       - run: npm test
 
   publish:
@@ -41,4 +41,4 @@ jobs:
       - checkout
       - run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
       - node/install-packages
-      - run: npm run semantic-release
+      - run: yarn semantic-release
