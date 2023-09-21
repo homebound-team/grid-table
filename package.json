@@ -52,11 +52,12 @@
       [
         "@semantic-release/exec",
         {
-          "prepareCmd": "npm run build"
+          "prepareCmd": "yarn build"
         }
       ],
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
-  }
+  },
+  "packageManager": "yarn@3.6.3"
 }
